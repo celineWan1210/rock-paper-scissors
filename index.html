@@ -1,0 +1,25 @@
+<script>
+    // function 1: get computer choice
+    // get computer choice which will return rock, paper or scissors
+    // use math random to get a number from 0 - 2
+    // match with case with 0 -> rock, 1 -> paper, 2 -> scissors
+    function getComputerChoice() {
+        // return random number from 0 - 2
+        const number = Math.floor(Math.random() * 3);
+        
+        // match case to return the string
+        switch (number) {
+            case 0:
+                return "rock";
+                break;
+            case 1:
+                return "paper";
+            case 2:
+                return "scissors";
+            default:
+                break;
+        }
+    }
+
+    console.log(getComputerChoice());
+</script>
