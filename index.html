@@ -31,7 +31,6 @@
         return humanChoice;
     }
 
-
     // decalre player score and conputer score
     // both new variable is set two 0
     let humanScore = 0;
@@ -79,11 +78,39 @@
         {
             console.log("You lose! Scissors beat paper");
             computerScore += 1;
+        } else 
+        {
+            console.log("Invalid input. You lose");
+            computerScore += 1;
         }
     }
 
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
+    // add playGame function that call play round five times
 
-    playRound(humanSelection, computerSelection);
+
+    function playGame() 
+    {
+        for (let i = 0; i < 5; i++) {
+            const humanSelection = getHumanChoice();
+            const computerSelection = getComputerChoice();
+            
+            playRound(humanSelection, computerSelection);
+        }
+
+        // print score
+        console.log(`Computer Score: ${computerScore}: Human Score: ${humanScore}`)
+        if (computerScore > humanScore)
+        {
+            console.log("You lose!");
+        } else if (humanScore > humanScore)
+        {
+            console.log("You win!");
+        } else 
+        {
+            console.log("Draw");
+        }
+
+    }
+
+    playGame();
 </script>
