@@ -81,34 +81,35 @@ function playRound(humanChoice, computerChoice)
     list.appendChild(listItem);
 }
 
+// game start when user click on any image
+const rockImg = document.querySelector(".rock-gesture");
+const paperImg = document.querySelector(".paper-gesture");
+const scissorsImg = document.querySelector(".scissors-gesture");
 
-// function 2: get human choice - then run the playRound function
-// prompt for huamne choice where user will always return a valid input
-// return it
-function getHumanChoice() {
-    let humanChoice = "";
+rockImg.addEventListener("click", ()=>{
+    playGame("rock")
+});
 
-    const rockImg = document.querySelector(".rock-gesture");
-    const paperImg = document.querySelector(".paper-gesture");
-    const scissorsImg = document.querySelector(".scissors-gesture");
+paperImg.addEventListener("click", ()=>{
+    playGame("paper")
+});
 
-    rockImg.addEventListener("click", ()=>{
-        console.log("rock clicked");
-        humanChoice = "rock";
-        playRound(humanChoice, getComputerChoice());
-    });
+scissorsImg.addEventListener("click", ()=>{
+    playGame("scissors")
+});
 
-    paperImg.addEventListener("click", ()=>{
-        console.log("paper clicked");
-        humanChoice = "paper";
-        playRound(humanChoice, getComputerChoice());
-    })
 
-    scissorsImg.addEventListener("click", ()=>{
-        console.log("scissors clicked");
-        humanChoice = "scissors";
-        playRound(humanChoice, getComputerChoice());
-    })
+let round = 0;
+function playGame(humanSelection) {
+    if (round > 5) {
+        return;
+    }
+
+    const computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection);
+    round += 1;
+
+    if (round == 5) {
+        console.log("check");
+    }
 }
-
-getHumanChoice();

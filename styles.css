@@ -14,7 +14,7 @@ body {
 .image-container {
     display: flex;
     justify-content: center;
-    margin: 300px 300px 0px;
+    margin: 100px 300px 0px 300px;
     gap: 32px;
 }
 
@@ -38,7 +38,7 @@ body {
     flex-direction: column;
     gap: 16px;
 
-    margin: 0px 300px 300px 300px;
+    margin: 10px 100px 100px 100px;
     padding: 20px 200px;
 
     background-color: #5dacbd;
@@ -66,5 +66,8 @@ li {
 }
 
 .computer-human-container {
-    
+    display: flex;
+    justify-content: center;
+    margin: 50px 0px 100px 0px;
+    gap: 32px;
 }
