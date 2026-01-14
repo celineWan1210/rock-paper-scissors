@@ -1,0 +1,31 @@
+.replay {
+    padding: 16px 32px;
+    background-color: #5dacbd;
+    border: none;
+    border-radius: 8px;
+    font-size: 24px;
+    color: #e0ebeb;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    gap: 24px;
+}
+
+/* for win page */
+body.win-page {
+    background-color: #F0FFDF;
+    border: 1px solid red;
+}
+
+
+.win {
+    color: #A8DF8E;
+    font-size: 120px;
+    font-weight: 900;
+}
+
