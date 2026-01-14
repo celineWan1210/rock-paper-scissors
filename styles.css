@@ -26,6 +26,10 @@ body {
     border-radius: 8px;
 }
 
+img:hover {
+    background-color: #24527a;
+}
+
 /* history container is below image container */
 .image-history-container {
     display: flex;
