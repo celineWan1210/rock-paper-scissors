@@ -1,5 +1,5 @@
 * {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     padding: 0px;
     margin: 0px;
 }
@@ -14,7 +14,7 @@ body {
 .image-container {
     display: flex;
     justify-content: center;
-    margin: 100px 300px 0px 300px;
+    margin: 0px 300px 0px 300px;
     gap: 32px;
 }
 
@@ -43,6 +43,9 @@ body {
 
     background-color: #5dacbd;
     align-items: center;
+
+    border: 1px solid #24527a;
+    border-radius: 8px;
 }
 
 .history-title {
@@ -70,4 +73,22 @@ li {
     justify-content: center;
     margin: 50px 0px 100px 0px;
     gap: 32px;
+}
+
+.computer-container, .human-container {
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+    color: #24527a;
+    font-size: 32px;
+    font-weight: 900;
+}
+
+.compare-symbol {
+    display: flex;
+    align-items: center;
+    color: #24527a;
+    font-size: 32px;
+    font-weight: 900;
 }
