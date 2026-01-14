@@ -16,16 +16,37 @@ body {
     gap: 24px;
 }
 
-/* for win page */
-body.win-page {
-    background-color: #F0FFDF;
-    border: 1px solid red;
-}
-
-
-.win {
-    color: #A8DF8E;
+.text {
     font-size: 120px;
     font-weight: 900;
 }
 
+/* for win page */
+body.win-page {
+    background-color: #F0FFDF;
+    /* border: 1px solid red; */
+}
+
+.win {
+    color: #A8DF8E;
+}
+
+
+/* for lose page */
+body.lose-page {
+    background-color: #FFD8DF;
+}
+
+.lose {
+    color: #FFAAB8;
+}
+
+
+/* for draw page */
+body.draw-page {
+    background-color: #e0ebeb;
+}
+
+.draw {
+    color: #a7bcb9;
+}

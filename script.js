@@ -94,6 +94,7 @@ const computerScoreDiv = document.querySelector(".computer-score");
 const computerScoreText = document.createElement("span");
 computerScoreDiv.appendChild(computerScoreText);
 
+
 rockImg.addEventListener("click", ()=>{
     playGame("rock")
 });
@@ -122,6 +123,15 @@ function playGame(humanSelection) {
     computerScoreText.textContent = computerScore;
 
     if (round == 5) {
-        console.log("check");
+        if (computerScore > humanScore)
+        {
+            window.location.href="lose.html"
+        } else if (humanScore > computerScore)
+        {
+            window.location.href="win.html";
+        } else
+        {
+            window.location.href="draw.html";
+        }
     }
 }
