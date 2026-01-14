@@ -45,7 +45,6 @@ function playRound(humanChoice, computerChoice)
 
     if (computerChoice == humanChoice) 
     {
-        console.log("Draw");
         listText.textContent = "Draw";
     } else if (computerChoice == "rock" && humanChoice == "paper")
     {
@@ -86,6 +85,15 @@ const rockImg = document.querySelector(".rock-gesture");
 const paperImg = document.querySelector(".paper-gesture");
 const scissorsImg = document.querySelector(".scissors-gesture");
 
+// chaneg score
+const humanScoreDiv = document.querySelector(".human-score");
+const humanScoreText = document.createElement("span");
+humanScoreDiv.appendChild(humanScoreText);
+
+const computerScoreDiv = document.querySelector(".computer-score");
+const computerScoreText = document.createElement("span");
+computerScoreDiv.appendChild(computerScoreText);
+
 rockImg.addEventListener("click", ()=>{
     playGame("rock")
 });
@@ -101,13 +109,17 @@ scissorsImg.addEventListener("click", ()=>{
 
 let round = 0;
 function playGame(humanSelection) {
-    if (round > 5) {
+    if (round > 4) {
         return;
     }
 
     const computerSelection = getComputerChoice();
     playRound(humanSelection, computerSelection);
     round += 1;
+
+    // change score
+    humanScoreText.textContent = humanScore;
+    computerScoreText.textContent = computerScore;
 
     if (round == 5) {
         console.log("check");
