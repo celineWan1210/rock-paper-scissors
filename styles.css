@@ -1,0 +1,70 @@
+* {
+    border: 1px solid red;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #e0ebeb;
+}
+
+
+/* rock paper image is centered */
+.image-container {
+    display: flex;
+    justify-content: center;
+    margin: 300px 300px 0px;
+    gap: 32px;
+}
+
+.image-container > img {
+    width: 200px;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+/* history container is below image container */
+.image-history-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 36px;
+}
+
+.history-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    margin: 0px 300px 300px 300px;
+    padding: 20px 200px;
+
+    background-color: #5dacbd;
+    align-items: center;
+}
+
+.history-title {
+    display: flex;
+
+    color: #24527a;
+    font-weight: 900;
+    font-size: 32px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px
+}
+
+li {
+    color:  #24527a;
+    font-size: 24px;
+    text-align: center;
+}
+
+.computer-human-container {
+    
+}

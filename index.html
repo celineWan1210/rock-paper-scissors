@@ -4,8 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class=computer-human-container>
+        <div class="computer-container">
+            <div class="computer-description">Computer Score</div>
+            <div class="computer-score"></div>
+        </div>
+
+        <div class="human-container">
+            <div class="human-description">Human Score</div>
+            <div class="human-score"></div>
+        </div>
+    </div>
+    
+    <div class="image-history-container">
+        <div class="image-container">
+            <img class="rock-gesture" src="images/rock.png" alt="rock gesture image">
+            <img class="paper-gesture" src="images/paper.png" alt="paper gesture image">
+            <img class="scissors-gesture" src="images/scissors.png" alt="scissors gesture image">
+        </div>
+
+        <div class="history-container">
+            <div class="history-title">History</div>
+            <ul>
+            </ul>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

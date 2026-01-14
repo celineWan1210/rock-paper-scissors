@@ -20,13 +20,7 @@ function getComputerChoice() {
     }
 }
     
-// function 2: get human choice
-// prompt for huamne choice where user will always return a valid input
-// return it
-function getHumanChoice() {
-    const humanChoice = prompt("Enter rock, paper or scissors");
-    return humanChoice;
-}
+
 
 // decalre player score and conputer score
 // both new variable is set two 0
@@ -45,68 +39,76 @@ let computerScore = 0;
 // else if C:scissors & C: paper (You lose! Scissors beat paper) (computerScore += 1)
 function playRound(humanChoice, computerChoice)
 {
-    // case insensitive
-    humanChoice = humanChoice.toLowerCase();
+    const list = document.querySelector("ul");
+    const listItem = document.createElement("li");
+    const listText = document.createElement("span");
 
     if (computerChoice == humanChoice) 
     {
         console.log("Draw");
+        listText.textContent = "Draw";
     } else if (computerChoice == "rock" && humanChoice == "paper")
     {
-        console.log("You win! Paper beats Rock");
+        listText.textContent = "You win! Paper beats Rock";
         humanScore += 1;
     } else if (computerChoice == "paper" && humanChoice == "rock")
     {
-        console.log("You lose! Paper beats Rock");
+        listText.textContent = "You lose! Paper beats Rock";
         computerScore += 1; 
     } else if (computerChoice == "scissors" && humanChoice == "rock")
     {
-        console.log("You win! Rock beats scissors");
+        listText.textContent = "You win! Rock beats scissors";
         humanScore +=1;
     } else if (computerChoice == "rock" && humanChoice == "scissors")
     {
-        console.log("You lose! Rock beats scissors");
+        listText.textContent = "You lose! Rock beats scissors";
         computerScore += 1;
     } else if (computerChoice == "paper" && humanChoice == "scissors")
     {
-    console.log("You win! Scissors beat paper");
+        listText.textContent = "You win! Scissors beat paper";
         humanScore += 1;
     } else if (computerChoice == "scissors" && humanChoice == "paper")
     {
-        console.log("You lose! Scissors beat paper");
+        listText.textContent = "You lose! Scissors beat paper";
         computerScore += 1;
     } else 
     {
-        console.log("Invalid input. You lose");
+        listText.textContent = "Invalid input. You lose";
         computerScore += 1;
     }
+
+    listItem.appendChild(listText);
+    list.appendChild(listItem);
 }
 
-// add playGame function that call play round five times
 
+// function 2: get human choice - then run the playRound function
+// prompt for huamne choice where user will always return a valid input
+// return it
+function getHumanChoice() {
+    let humanChoice = "";
 
-function playGame() 
-{
-    for (let i = 0; i < 5; i++) {
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
-            
-        playRound(humanSelection, computerSelection);
-    }
+    const rockImg = document.querySelector(".rock-gesture");
+    const paperImg = document.querySelector(".paper-gesture");
+    const scissorsImg = document.querySelector(".scissors-gesture");
 
-    // print score
-    console.log(`Computer Score: ${computerScore}: Human Score: ${humanScore}`)
-    if (computerScore > humanScore)
-    {
-        console.log("You lose!");
-    } else if (humanScore > computerScore)
-    {
-        console.log("You win!");
-    } else 
-    {
-        console.log("Draw");
-    }
+    rockImg.addEventListener("click", ()=>{
+        console.log("rock clicked");
+        humanChoice = "rock";
+        playRound(humanChoice, getComputerChoice());
+    });
 
+    paperImg.addEventListener("click", ()=>{
+        console.log("paper clicked");
+        humanChoice = "paper";
+        playRound(humanChoice, getComputerChoice());
+    })
+
+    scissorsImg.addEventListener("click", ()=>{
+        console.log("scissors clicked");
+        humanChoice = "scissors";
+        playRound(humanChoice, getComputerChoice());
+    })
 }
 
-playGame();
+getHumanChoice();
